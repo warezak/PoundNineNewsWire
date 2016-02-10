@@ -1,0 +1,1880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{6216d76c-eab2-4f25-8b75-8c8f833b2091}</ProjectGuid>
+    <avrdevice>ATxmega256A3U</avrdevice>
+    <avrdeviceseries>xmegaau</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>tft3</AssemblyName>
+    <Name>icon_loader</Name>
+    <RootNamespace>tft3</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>2</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options>
+          <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.components.display_controller.ili9341" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.basic.clock" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.gfx.font" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.basic.gpio" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="xmega.drivers.ioport" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.fs.fatfs" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.components.memory.sd_mmc" value="Add" config="spi" content-id="Atmel.ASF" />
+          <option id="common.components.display_controller.ili9341.example1" value="Add" config="" content-id="Atmel.ASF" />
+        </options>
+        <configurations>
+          <configuration key="config.spi_master_type" value="usart_spi" default="usart_spi" content-id="Atmel.ASF" />
+          <configuration key="config.gfx_mono.display" value="c12832_a1z" default="c12832_a1z" content-id="Atmel.ASF" />
+          <configuration key="config.gfx.display" value="ili9341_sdt028atft" default="ili9341_sdt028atft" content-id="Atmel.ASF" />
+          <configuration key="config.common.services.fs.fatfs.codepage" value="sbcs" default="sbcs" content-id="Atmel.ASF" />
+        </configurations>
+        <files>
+          <file path="src/ASF/common/boards/board.h" framework="" version="" source="common/boards/board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/conf_board.h" framework="" version="" source="common/components/display/ili9341/example1_basic/atxmega256a3bu_xmega_a3bu_xplained/conf_board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/conf_clock.h" framework="" version="" source="common/components/display/ili9341/example1_basic/atxmega256a3bu_xmega_a3bu_xplained/conf_clock.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/conf_ili9341.h" framework="" version="" source="common/components/display/ili9341/example1_basic/atxmega256a3bu_xmega_a3bu_xplained/conf_ili9341.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/conf_usart_spi.h" framework="" version="" source="common/components/display/ili9341/example1_basic/atxmega256a3bu_xmega_a3bu_xplained/conf_usart_spi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ili9341_example.c" framework="" version="" source="common/components/display/ili9341/example1_basic/ili9341_example.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/display/ili9341/ili9341.c" framework="" version="" source="common/components/display/ili9341/ili9341.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/display/ili9341/ili9341.h" framework="" version="" source="common/components/display/ili9341/ili9341.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/display/ili9341/ili9341_regs.h" framework="" version="" source="common/components/display/ili9341/ili9341_regs.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/genclk.h" framework="" version="" source="common/services/clock/genclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/osc.h" framework="" version="" source="common/services/clock/osc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/pll.h" framework="" version="" source="common/services/clock/pll.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/sysclk.h" framework="" version="" source="common/services/clock/sysclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/xmega/osc.h" framework="" version="" source="common/services/clock/xmega/osc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/xmega/pll.h" framework="" version="" source="common/services/clock/xmega/pll.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/xmega/sysclk.c" framework="" version="" source="common/services/clock/xmega/sysclk.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/xmega/sysclk.h" framework="" version="" source="common/services/clock/xmega/sysclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/delay/delay.h" framework="" version="" source="common/services/delay/delay.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/delay/xmega/cycle_counter.h" framework="" version="" source="common/services/delay/xmega/cycle_counter.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gpio/gpio.h" framework="" version="" source="common/services/gpio/gpio.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gpio/xmega_gpio/xmega_gpio.h" framework="" version="" source="common/services/gpio/xmega_gpio/xmega_gpio.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/ioport/ioport.h" framework="" version="" source="common/services/ioport/ioport.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/ioport/xmega/ioport.h" framework="" version="" source="common/services/ioport/xmega/ioport.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/ioport/xmega/ioport_compat.c" framework="" version="" source="common/services/ioport/xmega/ioport_compat.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/ioport/xmega/ioport_compat.h" framework="" version="" source="common/services/ioport/xmega/ioport_compat.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/spi/usart_spi.h" framework="" version="" source="common/services/spi/usart_spi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/spi/xmega_usart_spi/usart_spi.c" framework="" version="" source="common/services/spi/xmega_usart_spi/usart_spi.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/spi/xmega_usart_spi/usart_spi.h" framework="" version="" source="common/services/spi/xmega_usart_spi/usart_spi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt.h" framework="" version="" source="common/utils/interrupt.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt/interrupt_avr8.h" framework="" version="" source="common/utils/interrupt/interrupt_avr8.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/make/Makefile.avr.in" framework="" version="" source="common/utils/make/Makefile.avr.in" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/parts.h" framework="" version="" source="common/utils/parts.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/boards/xmega_a3bu_xplained/init.c" framework="" version="" source="xmega/boards/xmega_a3bu_xplained/init.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/boards/xmega_a3bu_xplained/led.h" framework="" version="" source="xmega/boards/xmega_a3bu_xplained/led.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/boards/xmega_a3bu_xplained/xmega_a3bu_xplained.h" framework="" version="" source="xmega/boards/xmega_a3bu_xplained/xmega_a3bu_xplained.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/cpu/ccp.h" framework="" version="" source="xmega/drivers/cpu/ccp.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/cpu/ccp.s" framework="" version="" source="xmega/drivers/cpu/ccp.s" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/cpu/xmega_reset_cause.h" framework="" version="" source="xmega/drivers/cpu/xmega_reset_cause.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/nvm/nvm.c" framework="" version="" source="xmega/drivers/nvm/nvm.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/nvm/nvm.h" framework="" version="" source="xmega/drivers/nvm/nvm.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/nvm/nvm_asm.s" framework="" version="" source="xmega/drivers/nvm/nvm_asm.s" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/pmic/pmic.h" framework="" version="" source="xmega/drivers/pmic/pmic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/usart/usart.c" framework="" version="" source="xmega/drivers/usart/usart.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/usart/usart.h" framework="" version="" source="xmega/drivers/usart/usart.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/assembler.h" framework="" version="" source="xmega/utils/assembler.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/assembler/gas.h" framework="" version="" source="xmega/utils/assembler/gas.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/bit_handling/clz_ctz.h" framework="" version="" source="xmega/utils/bit_handling/clz_ctz.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/compiler.h" framework="" version="" source="xmega/utils/compiler.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/preprocessor/mrepeat.h" framework="" version="" source="xmega/utils/preprocessor/mrepeat.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/preprocessor/preprocessor.h" framework="" version="" source="xmega/utils/preprocessor/preprocessor.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/preprocessor/stringz.h" framework="" version="" source="xmega/utils/preprocessor/stringz.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/preprocessor/tpaste.h" framework="" version="" source="xmega/utils/preprocessor/tpaste.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/progmem.h" framework="" version="" source="xmega/utils/progmem.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/utils/status_codes.h" framework="" version="" source="xmega/utils/status_codes.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx.h" framework="" version="3.8.1" source="common\services\gfx\gfx.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_text.c" framework="" version="3.8.1" source="common\services\gfx\gfx_text.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/sysfont.c" framework="" version="3.8.1" source="common\services\gfx\sysfont.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/sysfont.h" framework="" version="3.8.1" source="common\services\gfx\sysfont.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_text.h" framework="" version="3.8.1" source="common\services\gfx\gfx_text.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_sysfont.h" framework="" version="3.8.1" source="common\services\gfx\module_config\conf_sysfont.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_generic.c" framework="" version="3.8.1" source="common\services\gfx\gfx_generic.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_generic.h" framework="" version="3.8.1" source="common\services\gfx\gfx_generic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_ili9341_sdt028atft.c" framework="" version="3.8.1" source="common\services\gfx\gfx_ili9341_sdt028atft.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/gfx/gfx_ili9341_sdt028atft.h" framework="" version="3.8.1" source="common\services\gfx\gfx_ili9341_sdt028atft.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/calendar/calendar.c" framework="" version="3.8.1" source="common\services\calendar\calendar.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/calendar/calendar.h" framework="" version="3.8.1" source="common\services\calendar\calendar.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/storage/ctrl_access/ctrl_access.c" framework="" version="3.8.1" source="common\services\storage\ctrl_access\ctrl_access.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/storage/ctrl_access/ctrl_access.h" framework="" version="3.8.1" source="common\services\storage\ctrl_access\ctrl_access.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_access.h" framework="" version="3.8.1" source="common\services\storage\ctrl_access\module_config\conf_access.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/ff.c" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\ff.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/00index_e.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\00index_e.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/00index_j.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\00index_j.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/dwrite.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\dwrite.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/close.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\close.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/unlink.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\unlink.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f3.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f3.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f2.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f2.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f1.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f1.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/mount.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\mount.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/appnote.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\appnote.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/ATMEL-disclaimer.txt" framework="" version="3.8.1" source="thirdparty\fatfs\ATMEL-disclaimer.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/chdrive.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\chdrive.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/error.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\error.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/getcwd.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\getcwd.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/open.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\open.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/dstat.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\dstat.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/rename.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\rename.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/rwtest2.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest2.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/rwtest3.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest3.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/00readme.txt" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\00readme.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/dioctl.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\dioctl.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/eof.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\eof.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/read.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\read.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/chdir.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\chdir.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/fattime.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\fattime.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/utime.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\utime.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/write.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\write.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/sfile.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\sfile.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/sdir.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\sdir.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/putc.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\putc.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/forward.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\forward.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/puts.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\puts.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/readdir.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\readdir.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/size.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\size.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f6.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f6.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/filename.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\filename.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/updates.txt" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\updates.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f5.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f5.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/lseek.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\lseek.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/rwtest.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/sfileinfo.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\sfileinfo.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/f4.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\f4.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/getfree.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\getfree.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/opendir.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\opendir.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/layers3.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\layers3.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/dread.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\dread.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/mkfs.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\mkfs.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/sync.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\sync.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/css_j.css" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\css_j.css" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/css_e.css" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\css_e.css" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/sfatfs.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\sfatfs.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/tell.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\tell.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/chmod.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\chmod.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/stat.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\stat.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/truncate.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\truncate.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/printf.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\printf.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/gets.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\gets.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/mkdir.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\mkdir.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/rc.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\rc.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/img/layers.png" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\img\layers.png" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/dinit.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\dinit.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/doc/en/fdisk.html" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\doc\en\fdisk.html" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/ffconf.h" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\ffconf.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/diskio.h" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\diskio.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/ff.h" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\ff.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/integer.h" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\integer.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/rtc32/rtc32.c" framework="" version="3.8.1" source="xmega\drivers\rtc32\rtc32.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/rtc32/rtc32.h" framework="" version="3.8.1" source="xmega\drivers\rtc32\rtc32.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_rtc32.h" framework="" version="3.8.1" source="xmega\drivers\rtc32\module_config\conf_rtc32.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/xmega/drivers/sleep/sleep.h" framework="" version="3.8.1" source="xmega\drivers\sleep\sleep.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/memory/sd_mmc/sd_mmc.c" framework="" version="3.8.1" source="common\components\memory\sd_mmc\sd_mmc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/memory/sd_mmc/sd_mmc_spi.c" framework="" version="3.8.1" source="common\components\memory\sd_mmc\sd_mmc_spi.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/memory/sd_mmc/sd_mmc.h" framework="" version="3.8.1" source="common\components\memory\sd_mmc\sd_mmc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/memory/sd_mmc/sd_mmc_spi.h" framework="" version="3.8.1" source="common\components\memory\sd_mmc\sd_mmc_spi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_sd_mmc.h" framework="" version="3.8.1" source="common\components\memory\sd_mmc\module_config_spi\conf_sd_mmc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/components/memory/sd_mmc/sd_mmc_protocol.h" framework="" version="3.8.1" source="common\components\memory\sd_mmc\sd_mmc_protocol.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/sleepmgr/xmega/sleepmgr.c" framework="" version="3.8.1" source="common\services\sleepmgr\xmega\sleepmgr.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/sleepmgr/sleepmgr.h" framework="" version="3.8.1" source="common\services\sleepmgr\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/sleepmgr/xmega/sleepmgr.h" framework="" version="3.8.1" source="common\services\sleepmgr\xmega\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_sleepmgr.h" framework="" version="3.8.1" source="common\services\sleepmgr\xmega\module_config\conf_sleepmgr.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-port-r0.09/diskio.c" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-port-r0.09\diskio.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-port-r0.09/xmega/fattime.c" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-port-r0.09\xmega\fattime.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/fatfs/fatfs-r0.09/src/option/ccsbcs.c" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\option\ccsbcs.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_fatfs.h" framework="" version="3.8.1" source="thirdparty\fatfs\fatfs-r0.09\src\module_config_sbcs\conf_fatfs.h" changed="False" content-id="Atmel.ASF" />
+        </files>
+        <documentation help="http://asf.atmel.com/docs/3.8.1/common.components.display_controller.ili9341.example1.xmega_a3bu_xplained/html/index.html" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
+        </dependencies>
+        <project id="common.components.display_controller.ili9341.example1.xmega_a3bu_xplained" value="Add" config="" content-id="Atmel.ASF" />
+        <board id="board.xmega_a3bu_xplained" value="Add" config="" content-id="Atmel.ASF" />
+      </framework-data>
+    </AsfFrameworkConfig>
+    <preserveEEPROM>true</preserveEEPROM>
+    <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
+    <com_atmel_avrdbg_tool_atmelice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <PdiClock>125000</PdiClock>
+        </InterfaceProperties>
+        <InterfaceName>PDI</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
+      <ToolNumber>J41800021360</ToolNumber>
+      <ToolName>Atmel-ICE</ToolName>
+    </com_atmel_avrdbg_tool_atmelice>
+    <avrtoolinterface>PDI</avrtoolinterface>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>PDI</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
+            <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
+            <Value>IOPORT_XMEGA_COMPAT</Value>
+            <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../src/ASF/xmega/utils</Value>
+            <Value>../src/ASF/common/services/spi</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/xmega/drivers/pmic</Value>
+            <Value>../src/ASF/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/ASF/xmega/utils/preprocessor</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src/ASF/xmega/drivers/nvm</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/components/display/ili9341</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/common/services/gpio</Value>
+            <Value>../src/ASF/xmega/boards</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/xmega/drivers/cpu</Value>
+            <Value>../src/ASF/common/services/ioport</Value>
+            <Value>../src/ASF/xmega/drivers/usart</Value>
+            <Value>../src/ASF/common/services/gfx</Value>
+            <Value>../src/ASF/common/services/calendar</Value>
+            <Value>../src/ASF/common/services/storage/ctrl_access</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-r0.09/src</Value>
+            <Value>../src/ASF/xmega/drivers/rtc32</Value>
+            <Value>../src/ASF/xmega/drivers/sleep</Value>
+            <Value>../src/ASF/common/components/memory/sd_mmc</Value>
+            <Value>../src/ASF/common/services/sleepmgr</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-port-r0.09/xmega</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -Wl,--section-start=.BOOT=0x40000</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=XMEGA_A3BU_XPLAINED -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DIOPORT_XMEGA_COMPAT</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>../src/ASF/xmega/utils</Value>
+            <Value>../src/ASF/common/services/spi</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/xmega/drivers/pmic</Value>
+            <Value>../src/ASF/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/ASF/xmega/utils/preprocessor</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src/ASF/xmega/drivers/nvm</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/components/display/ili9341</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/common/services/gpio</Value>
+            <Value>../src/ASF/xmega/boards</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/xmega/drivers/cpu</Value>
+            <Value>../src/ASF/common/services/ioport</Value>
+            <Value>../src/ASF/xmega/drivers/usart</Value>
+            <Value>../src/ASF/common/services/gfx</Value>
+            <Value>../src/ASF/common/services/calendar</Value>
+            <Value>../src/ASF/common/services/storage/ctrl_access</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-r0.09/src</Value>
+            <Value>../src/ASF/xmega/drivers/rtc32</Value>
+            <Value>../src/ASF/xmega/drivers/sleep</Value>
+            <Value>../src/ASF/common/components/memory/sd_mmc</Value>
+            <Value>../src/ASF/common/services/sleepmgr</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-port-r0.09/xmega</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
+            <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
+            <Value>IOPORT_XMEGA_COMPAT</Value>
+            <Value>CONF_GFX_ILI9341_SDT028ATFT=1</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../src/ASF/xmega/utils</Value>
+            <Value>../src/ASF/common/services/spi</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/xmega/drivers/pmic</Value>
+            <Value>../src/ASF/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/ASF/xmega/utils/preprocessor</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src/ASF/xmega/drivers/nvm</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/components/display/ili9341</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/common/services/gpio</Value>
+            <Value>../src/ASF/xmega/boards</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/xmega/drivers/cpu</Value>
+            <Value>../src/ASF/common/services/ioport</Value>
+            <Value>../src/ASF/xmega/drivers/usart</Value>
+            <Value>../src/ASF/common/services/gfx</Value>
+            <Value>../src/ASF/common/services/calendar</Value>
+            <Value>../src/ASF/common/services/storage/ctrl_access</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-r0.09/src</Value>
+            <Value>../src/ASF/xmega/drivers/rtc32</Value>
+            <Value>../src/ASF/xmega/drivers/sleep</Value>
+            <Value>../src/ASF/common/components/memory/sd_mmc</Value>
+            <Value>../src/ASF/common/services/sleepmgr</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-port-r0.09/xmega</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Maximum (-g3)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -Wl,--section-start=.BOOT=0x40000</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=XMEGA_A3BU_XPLAINED -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DIOPORT_XMEGA_COMPAT</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>../src/ASF/xmega/utils</Value>
+            <Value>../src/ASF/common/services/spi</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/xmega/drivers/pmic</Value>
+            <Value>../src/ASF/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/ASF/xmega/utils/preprocessor</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src/ASF/xmega/drivers/nvm</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/components/display/ili9341</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/common/services/gpio</Value>
+            <Value>../src/ASF/xmega/boards</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/xmega/drivers/cpu</Value>
+            <Value>../src/ASF/common/services/ioport</Value>
+            <Value>../src/ASF/xmega/drivers/usart</Value>
+            <Value>../src/ASF/common/services/gfx</Value>
+            <Value>../src/ASF/common/services/calendar</Value>
+            <Value>../src/ASF/common/services/storage/ctrl_access</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-r0.09/src</Value>
+            <Value>../src/ASF/xmega/drivers/rtc32</Value>
+            <Value>../src/ASF/xmega/drivers/sleep</Value>
+            <Value>../src/ASF/common/components/memory/sd_mmc</Value>
+            <Value>../src/ASF/common/services/sleepmgr</Value>
+            <Value>../src/ASF/thirdparty/fatfs/fatfs-port-r0.09/xmega</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\ASF\" />
+    <Folder Include="src\ASF\common\" />
+    <Folder Include="src\ASF\common\boards\" />
+    <Folder Include="src\ASF\common\components\" />
+    <Folder Include="src\ASF\common\components\display\" />
+    <Folder Include="src\ASF\common\components\display\ili9341\" />
+    <Folder Include="src\ASF\common\components\memory\" />
+    <Folder Include="src\ASF\common\components\memory\data_flash" />
+    <Folder Include="src\ASF\common\components\memory\data_flash\at45dbx" />
+    <Folder Include="src\ASF\common\components\memory\sd_mmc\" />
+    <Folder Include="src\ASF\common\components\resistive_touch" />
+    <Folder Include="src\ASF\common\components\resistive_touch\ads7843" />
+    <Folder Include="src\ASF\common\services\" />
+    <Folder Include="src\ASF\common\services\calendar\" />
+    <Folder Include="src\ASF\common\services\clock\" />
+    <Folder Include="src\ASF\common\services\clock\xmega\" />
+    <Folder Include="src\ASF\common\services\delay\" />
+    <Folder Include="src\ASF\common\services\delay\xmega\" />
+    <Folder Include="src\ASF\common\services\gfx\" />
+    <Folder Include="src\ASF\common\services\gpio\" />
+    <Folder Include="src\ASF\common\services\gpio\xmega_gpio\" />
+    <Folder Include="src\ASF\common\services\ioport\" />
+    <Folder Include="src\ASF\common\services\ioport\xmega\" />
+    <Folder Include="src\ASF\common\services\resistive_touch" />
+    <Folder Include="src\ASF\common\services\sleepmgr\" />
+    <Folder Include="src\ASF\common\services\sleepmgr\xmega\" />
+    <Folder Include="src\ASF\common\services\spi\" />
+    <Folder Include="src\ASF\common\services\spi\xmega_usart_spi\" />
+    <Folder Include="src\ASF\common\services\storage\" />
+    <Folder Include="src\ASF\common\services\storage\ctrl_access\" />
+    <Folder Include="src\ASF\common\utils\" />
+    <Folder Include="src\ASF\common\utils\interrupt\" />
+    <Folder Include="src\ASF\common\utils\make\" />
+    <Folder Include="src\ASF\thirdparty\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-port-r0.09\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-port-r0.09\xmega\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\" />
+    <Folder Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\option\" />
+    <Folder Include="src\ASF\xmega\" />
+    <Folder Include="src\ASF\xmega\boards\" />
+    <Folder Include="src\ASF\xmega\boards\xmega_a3bu_xplained\" />
+    <Folder Include="src\ASF\xmega\drivers\" />
+    <Folder Include="src\ASF\xmega\drivers\cpu\" />
+    <Folder Include="src\ASF\xmega\drivers\rtc" />
+    <Folder Include="src\ASF\xmega\drivers\nvm\" />
+    <Folder Include="src\ASF\xmega\drivers\pmic\" />
+    <Folder Include="src\ASF\xmega\drivers\sleep\" />
+    <Folder Include="src\ASF\xmega\drivers\usart\" />
+    <Folder Include="src\ASF\xmega\utils\" />
+    <Folder Include="src\ASF\xmega\utils\assembler\" />
+    <Folder Include="src\ASF\xmega\utils\bit_handling\" />
+    <Folder Include="src\ASF\xmega\utils\preprocessor\" />
+    <Folder Include="src\config\" />
+    <Folder Include="src\images" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\ASF\common\components\memory\data_flash\at45dbx\at45dbx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\components\memory\data_flash\at45dbx\at45dbx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\components\memory\data_flash\at45dbx\at45dbx_hal_spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\components\memory\sd_mmc\sd_mmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\components\memory\sd_mmc\sd_mmc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\components\memory\sd_mmc\sd_mmc_protocol.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\components\memory\sd_mmc\sd_mmc_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\components\memory\sd_mmc\sd_mmc_spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\components\resistive_touch\ads7843\ads7843.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\components\resistive_touch\ads7843\ads7843.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\calendar\calendar.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\calendar\calendar.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\gfx\gfx_generic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\gfx\gfx_ili9341_sdt028atft.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\resistive_touch\rtouch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\resistive_touch\rtouch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\services\resistive_touch\rtouch_ads7843.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\sleepmgr\sleepmgr.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\sleepmgr\xmega\sleepmgr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\sleepmgr\xmega\sleepmgr.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\storage\ctrl_access\ctrl_access.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\storage\ctrl_access\ctrl_access.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\diskio.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\thirdparty\fatfs\fatfs-port-r0.09\diskio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\fatfs\fatfs-port-r0.09\xmega\fattime.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\ff.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\ffconf.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\ff.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\integer.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\option\ccsbcs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\xmega\drivers\sleep\sleep.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\xmega\drivers\rtc\rtc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\rtc\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\button_blue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\button_blue_pressed.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_L.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_M.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_P_L.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_P_M.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_P_R.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Button_R.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\thirdparty\fatfs\ATMEL-disclaimer.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\00index_e.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\00index_j.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\css_e.css">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\css_j.css">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\appnote.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\chdir.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\chdrive.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\chmod.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\close.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\dinit.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\dioctl.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\dread.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\dstat.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\dwrite.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\eof.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\error.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\fattime.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\fdisk.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\filename.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\forward.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\getcwd.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\getfree.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\gets.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\lseek.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\mkdir.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\mkfs.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\mount.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\open.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\opendir.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\printf.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\putc.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\puts.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\rc.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\read.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\readdir.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\rename.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\sdir.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\sfatfs.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\sfile.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\sfileinfo.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\size.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\stat.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\sync.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\tell.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\truncate.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\unlink.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\utime.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\en\write.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f1.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f2.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f3.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f4.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f5.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\f6.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\layers.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\layers3.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest2.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\img\rwtest3.png">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\doc\updates.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\fatfs\fatfs-r0.09\src\00readme.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_access.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\config\conf_ads7843.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_rtc32.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_sd_mmc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_sleepmgr.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_fatfs.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\config\conf_at45dbx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\flash_fs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\flash_fs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\49ers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\76ers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\9-64x64.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\9to5Mac48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a49ers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a76ers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a76ers55x55a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a76ers55x55b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a76ers60x60a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a76ers60x60b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a964x64.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\a9to5Mac48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\ABC48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Adafruit48X48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\AnandTech48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\AndroidCentral48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Angels48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\apnews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Astros48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Athletics48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\autoblog48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\autoexpress48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Avalanche48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\bbc48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\bbcsport48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bears48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bengals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\bet48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BigThink48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bills48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Blackhawks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\bleacherreports48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\blooombergbusiness48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BlueJackets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BlueJays48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Blues48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BoingBoing48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BrainyQuotes48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Braves48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Brewers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Broncos48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Browns48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bruins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Buccaneers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bucks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Bulls48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BusinessInsider48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\BusinessWire48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\buzzfeed48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Canadiens48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Canucks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Capitals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\caranddriver48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Cardinals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Cavaliers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\cbsnews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Celtics48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Chargers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Chiefs48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Clippers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\cnbc48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\CNN48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\CNNMoney48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Colts48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\comicbook48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\CoolHunting48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Cowboys48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Coyotes48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Cubs48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\deadspin48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\dealbreaker48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Devils48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Diamondbacks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\digitaltrends48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\DiscoveryNews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Dodgers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Dolphins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\drudge48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Ducks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Eagles48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\engadget48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Entrepreneur48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\EOnline48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\espn48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\extra48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Falcons48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Fashionista48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\fastcompany48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\feedly.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Flames48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\flavorwire48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\food52-48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\forbes48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\foxnews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\foxsports48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Fubiz48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Gamasutra48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Giants48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Gizmodo48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\gmail48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\gmail55x55.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\goldbox48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\googlenews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\GQ48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Grizzlies48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\hackaday48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Hawks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Heat48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Highsnobiety48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Hornets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\huffpost48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Hurricanes48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\ign48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\inccom48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Indians48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\InsideHigherEd48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\instructables48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\investingcom48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\io948x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Islanders48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Jaguars48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Jazz48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Jets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\jezebel48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Kings48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Knicks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Kotaku48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Lakers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\LaughingSquid48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\lifhacker48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Lightning48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Lions48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\livescience48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\macrumors48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Magic48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\MakeUseOf48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\MapleLeafs48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Mariners48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\MarketWatch48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Marketwired48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Marlins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\mashable48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Mavericks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\mentalfloss48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Mets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\mlb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\motleyfool48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\motortrend48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\msnmoney48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nascar48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\natgeo48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Nationals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nba.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nbc48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\neatorama48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Nets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\newser48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nfl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NFLCardinals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NFLGiants48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NFLJets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nhl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NHLRangers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NintendoLife48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\NPR48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Nuggets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\nyt48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Oilers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Orioles48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\outlook48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\outlook55x55.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p948x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p955x55.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p960x60.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p960x60a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p960x60b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\p964x64.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Pacers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Packers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Padres48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Panthers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Patriots48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Pelicans48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Penguins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\people48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\perezhilton48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\PetaPixel48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Phillies48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\physorg48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Pirates48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Pistons48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Politico48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\popsugar48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Predators48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Quartz48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\quotesnack48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\quotespage48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Raiders48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Rams48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Rangers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Raptors48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Ravens48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Rays48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\readwrite48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\reddit48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Reds48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Redskins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\RedSoxs48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\RedWings48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\reuters48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Rockets48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Rockies48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\rotoworld48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Royals48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Sabres48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Saints48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\salon48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\sciencedaily48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\sciencemag48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\scout48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Seahawks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\seekingalpha48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Sharks48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Siliconera48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\skysports48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Slate48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\spacecom48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Spurs48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Stars48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Steelers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Suns48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\TechCrunch48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Texans48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\The Atlantic48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\TheEconomist48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\theregister48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\thinkgeek48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\ThoughtCatalog48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Thunder48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Tigers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Timberwolves48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\time48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Titans48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\tmz48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\TopSpeed48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\TrailBlazers48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Twins48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\twitter-bird48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\twitter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\twitter55x55.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\twitterbird48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Upworthy48s48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\usatoday48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\usweekly.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\usweekly48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\variety48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\VCDispatch48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\VentureBeat48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\vice48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Vikings48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Vulture48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Warriors48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\washingtonpost48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\webmd48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\WhiteSox48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\whowhatwear48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\wikihow48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Wild48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\wired48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Wizards48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\WSJ.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\YahooEarnings48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\YahooFinance48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\YahooNews48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\yahoosports48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\images\Yankees48x48.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\logo9.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\screens.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\screens.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sd_mmc_mem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sd_mmc_mem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ui_objects.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ui_objects.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\window_manager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\window_manager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\gfx\gfx_ili9341_sdt028atft.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx_generic.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\gfx\gfx_text.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_sysfont.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx_text.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\gfx\sysfont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\gfx\sysfont.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gfx\gfx.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\asf.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_clock.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_board.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_ili9341.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_usart_spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\ioport\xmega\ioport_compat.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\make\Makefile.avr.in">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\assembler\gas.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\progmem.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\ioport\xmega\ioport.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\preprocessor\stringz.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\pmic\pmic.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\parts.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\osc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\cpu\ccp.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\components\display\ili9341\ili9341.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\delay\xmega\cycle_counter.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\assembler.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\cpu\xmega_reset_cause.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\interrupt.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\nvm\nvm.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\components\display\ili9341\ili9341_regs.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\spi\xmega_usart_spi\usart_spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\pll.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\preprocessor\mrepeat.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\drivers\usart\usart.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\boards\xmega_a3bu_xplained\led.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gpio\xmega_gpio\xmega_gpio.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\sysclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\xmega\osc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\xmega\sysclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\delay\delay.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\genclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\boards\board.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\components\display\ili9341\ili9341.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\ioport\ioport.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\interrupt\interrupt_avr8.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\status_codes.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\xmega\pll.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\clock\xmega\sysclk.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\xmega\utils\preprocessor\preprocessor.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\preprocessor\tpaste.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\bit_handling\clz_ctz.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\gpio\gpio.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\ioport\xmega\ioport_compat.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\xmega\boards\xmega_a3bu_xplained\xmega_a3bu_xplained.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\xmega\utils\compiler.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\spi\usart_spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\spi\xmega_usart_spi\usart_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\boards\xmega_a3bu_xplained\init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\cpu\ccp.s">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\nvm\nvm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\nvm\nvm_asm.s">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\xmega\drivers\usart\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

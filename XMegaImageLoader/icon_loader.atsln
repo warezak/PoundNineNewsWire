@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "icon_loader", "tft3\icon_loader.cproj", "{6216D76C-EAB2-4F25-8B75-8C8F833B2091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6216D76C-EAB2-4F25-8B75-8C8F833B2091}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6216D76C-EAB2-4F25-8B75-8C8F833B2091}.Debug|AVR.Build.0 = Debug|AVR
+		{6216D76C-EAB2-4F25-8B75-8C8F833B2091}.Release|AVR.ActiveCfg = Release|AVR
+		{6216D76C-EAB2-4F25-8B75-8C8F833B2091}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lte IE 9 ]> <html class="ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<html>
+<head lang="en">
+<link rel="stylesheet" type="text/css" href="simple_link.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	var _urn = "84dd20e0fe28-mysimplelink";            	// serves to identify the service name (Mac Name insert by yourself ...)
+	var _res = "logo.gif";  						  	// serves as a dummy resource to be checked on remote server
+	var _page = "test.html";
+	var _img = new Image();
+
+	var _tmr;                 // the timer handler
+	var _status = 0;          // the status of remote resource availability
+	var _count	= 0;
+	var _tmr_zero = 0;
+	var _flag = 0;
+_tmr = setInterval(get_status,5000);
+
+function get_status()
+{
+
+if(_flag == 1)
+{
+
+_flag = 0;
+
+	// helper function for getting token values
+	function getTokenValue(paramPage, tokenId, successFn, failFn) {
+		$.ajax({
+				"type": "GET",
+				"url": paramPage,
+				"cache": false,
+				"dataType": "html"
+			})
+			// define callback for get request success
+			.done(function(getdata, status, xhr) {
+				successFn($(getdata).filter('#'+tokenId).text());
+			})
+			.fail(function(jqxhr, settings, exception) {
+				failFn();
+			});
+			
+	}
+
+
+		getTokenValue('param_status.html', 'Device_Status', 
+					// successFn callback, val is the token value
+					function(val) {
+						if (val == "TRUE") {
+							_flag = 0;
+							alert ("Successfully Connected to AP");
+							
+						} else {
+							if (val == "FALSE") 
+							{
+								
+								//if(_flag == 1)
+								//{
+									alert ("Connection to AP Failed, Check AP/Security Key and Try Again ");
+								//}
+								_flag = 0;
+								
+							}
+							else
+							{
+								alert ("Rechecking Status..");
+								if(_count>2)
+								{
+									alert ("AP Connection Status Check Failed - Reconnect and Refresh the page");
+									_flag = 0;
+								}
+								else
+								{
+									_flag = 1;
+								}
+							}
+						}
+					},
+					// failFn callback
+					function() {
+					if(_count<3)
+					{
+						alert ("Oops..It Seems Connection to Device AP is lost, Reconnect and wait for Notification");
+						_flag = 1;
+						
+					}
+					else
+					{
+						//if(_flag == 1)
+						//{
+							alert ("AP Connection Status Check Failed - Reconnect and Refresh the page");
+						//}
+						
+					}
+					});
+	_count++;				
+}
+}
+
+function on_submit()
+{
+	alert ("Checking Status..");
+	_count=0;
+	_flag = 1;
+		
+}
+
+function SwitchAP()
+{
+	alert ("Switching to Station Mode..Connection to the Device AP will be Lost!!");		
+}
+
+function update_ap_list()
+{
+    var selectList = document.getElementById("list_ap");
+    var aplist = new Array();
+	aplist[0] = "__SL_G_U00";
+	aplist[1] = "__SL_G_U01";
+	aplist[2] = "__SL_G_U02";
+	aplist[3] = "__SL_G_U03";
+	aplist[4] = "__SL_G_U04";
+	aplist[5] = "__SL_G_U05";
+	aplist[6] = "__SL_G_U06";
+	aplist[7] = "__SL_G_U07";
+	aplist[8] = "__SL_G_U08";
+	aplist[9] = "__SL_G_U09";
+	aplist[10] = "__SL_G_U10";
+	aplist[11] = "__SL_G_U11";
+	aplist[12] = "__SL_G_U12";
+	aplist[13] = "__SL_G_U13";
+	aplist[14] = "__SL_G_U14";
+	aplist[15] = "__SL_G_U15";
+	aplist[16] = "__SL_G_U16";
+	aplist[17] = "__SL_G_U17";
+	aplist[18] = "__SL_G_U18";
+	aplist[19] = "__SL_G_U19";
+	
+    for (var i = 0; i < aplist.length; i++) 
+	{
+		if(aplist[i] != "__No_AP_Available__")
+		{
+			var option = document.createElement("option");
+			option.value = aplist[i];
+			option.text = aplist[i];
+			selectList.add(option);
+		}
+	}
+}
+
+</script>
+
+
+<meta charset="UTF-8">
+<title></title>
+<style>body{background:#e3f2fd;font-family:sans-serif;}ul{margin:0px;padding:0px;display:block;overflow:hidden;}ul li{list-style-type:none;float:left;margin-right:5px;}form{width:98%;max-width:650px;border-radius:4px;border:0px solid #ccc;background:#fff;background-size:cover;color:#333;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.30);padding:1%;margin:auto;}label.main{display:block;width:150px;font-size:10pt;font-weight:bold;margin:10px auto;overflow:hidden;float:left;text-align:right;padding-right:10px;}.headTitle{background:#7A81A1;color:#fff;border-radius:4px;padding:10px;font-size:13pt;}.headTitle.main{font-size:16pt;background:#337ab7;}.headDetails{padding:5px 10px;font-size:11pt;}.subContent{padding:5px 10px;}.subContent .row{width:100%;overflow:hidden;}.subContent .rb{margin:10px auto;}.drop_down{background:#fafafa;border:1px solid #ccc;border-radius:2px;border-width:1px;color:#333;font-family:'Roboto',sans-serif;font-size:13px;margin:1px 0;padding:9px;}.text_field{background:#fafafa;border:1px solid #ccc;border-radius:2px;border-width:1px;color:#333;font-family:'Roboto',sans-serif;font-size:13px;margin:1px 0;padding:10px;}.largeBtn{display:block;font-size:16pt;font-weight:400;text-align:center;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px;color:#fff;background-color:#337ab7;border-color:#2e6da4;padding:10px;width:100%;max-width:350px;margin:10px auto;}.largeBtn:hover{color:#fff;background-color:#286090;border-color:#204d74;}@media (max-width: 450px) {label.main{width:100%;float:none;text-align:left;}.drop_down,.text_field{width:100%;}}</style>
+</head>
+<body class="in-frame" onload="update_ap_list()">
+
+<form method="POST" name="SimpleLink Configuration 0" id = "form_id1" action = "nothing" onsubmit="on_submit()">
+<h1 class="headTitle main">
+Pound Nine Wireless Connection Setup
+</h1>
+<p class="headDetails">
+Follow these three steps to connect your device to the internet
+</p>
+<h1 class="headTitle">
+Step 1
+</h1>
+<p class="headDetails">
+Select the access point, security type, and enter a password
+</p>
+<div class="subContent">
+<div class="row">
+<label for="access_point" class="main" dir=LTR>Select Access Point:</label>
+<select id="list_ap" name="__SL_P_U.D" size="1" class=""user-input"">
+<option>-Select AP-</option>
+</select>
+</div>
+<div class="row">
+<label for="" class="main" dir=LTR>Security Type:</label>
+<ul class="user-input" dir=LTR>
+<li><input type="radio" name="__SL_P_U.E" id="access_point1" value="0"><label for="access_point1">Open</label>
+</li>
+<li><input type="radio" name="__SL_P_U.E" id="access_point2" value="1"><label for="access_point2">WEP</label>
+</li>
+<li><input type="radio" name="__SL_P_U.E" id="access_point3" value="2"><label for="access_point3">WPA1</label>
+</li>
+<li><input type="radio" name="__SL_P_U.E" id="access_point4" value="3" checked="checked"><label for="access_point4">WPA2</label></li>
+</ul>
+</div>
+<div class="row">
+<label for="access_password" class="main" dir=LTR>Password:</label>
+<input type="text" name="__SL_P_U.F" id="access_password" class="user-input" size="25" maxlength="255" value="">
+</div>
+</div>
+<h1 class="headTitle">
+Step 2
+</h1>
+<p class="headDetails">
+Click on 'Pass Credentials' to send the credentials to the device. Wait for succesful connection notification.
+</p>
+<div class="subContent">
+<button class="largeBtn" input type="submit"  name="__SL_P_U.C" value="Connect">
+Pass Credentials
+</button>
+</div>
+</form>
+<form method="POST" name="SimpleLink Configuration 1" action = "nothing" onsubmit="SwitchAP()">
+<h1 class="headTitle">
+Step 3
+</h1>
+<p class="headDetails">
+Upon 'Successful Connection' notification, click on 'Connect to Internet' to switch the device
+from accepting credentials mode to connect to the internet mode.
+</p>
+
+<div class="subContent">
+<button class="largeBtn"input type="submit"  name="__SL_P_U.0" value ="Switch to Station Mode">
+Connect to Internet
+</button>
+</div>
+</form>
+
+
+</body>
+</html>
